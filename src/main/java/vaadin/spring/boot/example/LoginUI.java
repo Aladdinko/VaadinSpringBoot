@@ -50,7 +50,7 @@ public class LoginUI extends UI {
         login.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent clickEvent) {
-                login();
+                doLogin();
             }
         });
         VerticalLayout loginLayout = new VerticalLayout();
@@ -81,7 +81,7 @@ public class LoginUI extends UI {
         setSizeFull();
     }
 
-    private void login() {
+    private void doLogin() {
 
         try {
             vaadinSharedSecurity.login(username.getValue(),password.getValue());

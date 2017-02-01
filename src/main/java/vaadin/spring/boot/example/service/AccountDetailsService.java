@@ -1,4 +1,4 @@
-package vaadin.spring.boot.example.account;
+package vaadin.spring.boot.example.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,21 +7,23 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import vaadin.spring.boot.example.account.Account;
+import vaadin.spring.boot.example.dao.AccountDAO;
 
 /**
  * Created by maggouh on 31/01/17.
  */
 @Service
-public class DaoAccountDetailsService implements UserDetailsService {
+public class AccountDetailsService implements UserDetailsService {
 
     private final Logger LOG = LoggerFactory.getLogger(getClass());
     @Autowired
-    AccountRepository accountRepository;
+    AccountDAO accountDAO;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
-            Account account = accountRepository.findAccountByUsername(username);
+            Account account = accountDAO.findAccountByUsername(username);
             return account;
         } catch (UsernameNotFoundException e) {
             LOG.debug("Account not found", e);

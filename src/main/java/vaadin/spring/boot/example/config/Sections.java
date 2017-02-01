@@ -1,4 +1,4 @@
-package vaadin.spring.boot.example;
+package vaadin.spring.boot.example.config;
 
 import org.springframework.stereotype.Component;
 import org.vaadin.spring.sidebar.annotation.SideBarSection;

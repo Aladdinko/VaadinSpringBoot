@@ -10,7 +10,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 import org.vaadin.spring.sidebar.annotation.FontAwesomeIcon;
 import org.vaadin.spring.sidebar.annotation.SideBarItem;
-import vaadin.spring.boot.example.Sections;
+import vaadin.spring.boot.example.config.Sections;
 
 /**
  * Created by Maggouh on 26/01/17.
