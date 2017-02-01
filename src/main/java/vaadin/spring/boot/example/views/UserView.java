@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.vaadin.spring.sidebar.annotation.FontAwesomeIcon;
 import org.vaadin.spring.sidebar.annotation.SideBarItem;
-import vaadin.spring.boot.example.Sections;
-import vaadin.spring.boot.example.backend.MyBackend;
+import vaadin.spring.boot.example.config.Sections;
+import vaadin.spring.boot.example.config.backend.MyBackend;
 
 /**
  * Created by Maggouh on 26/01/17.

@@ -1,4 +1,4 @@
-package vaadin.spring.boot.example.account;
+package vaadin.spring.boot.example.dao.exception;
 
 /**
  * Created by maggouh on 31/01/17.

@@ -22,7 +22,8 @@ import org.vaadin.spring.security.shared.VaadinAuthenticationSuccessHandler;
 import org.vaadin.spring.security.shared.VaadinSessionClosingLogoutHandler;
 import org.vaadin.spring.security.shared.VaadinUrlAuthenticationSuccessHandler;
 import org.vaadin.spring.security.web.VaadinRedirectStrategy;
-import vaadin.spring.boot.example.account.CustomAuthenticationProvider;
+import vaadin.spring.boot.example.config.CustomAuthenticationProvider;
+
 
 @SpringBootApplication(exclude = org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class)
 public class VaadinSpringBootApplication {
@@ -37,6 +38,7 @@ public class VaadinSpringBootApplication {
     @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true, proxyTargetClass = true)
     @EnableVaadinSharedSecurity
     static class SecurityConfig extends WebSecurityConfigurerAdapter {
+
         @Autowired
         CustomAuthenticationProvider customAuthenticationProvider;
 

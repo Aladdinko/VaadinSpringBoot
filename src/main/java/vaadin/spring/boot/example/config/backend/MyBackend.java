@@ -1,4 +1,4 @@
-package vaadin.spring.boot.example.backend;
+package vaadin.spring.boot.example.config.backend;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 

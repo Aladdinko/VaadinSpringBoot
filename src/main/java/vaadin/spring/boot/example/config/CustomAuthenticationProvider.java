@@ -1,4 +1,4 @@
-package vaadin.spring.boot.example.account;
+package vaadin.spring.boot.example.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -8,6 +8,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
+import vaadin.spring.boot.example.account.Account;
+import vaadin.spring.boot.example.dao.AccountDAO;
 
 import java.util.Collection;
 
@@ -18,13 +20,13 @@ import java.util.Collection;
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
-    AccountRepository userService;
+    AccountDAO accountDAO;
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName().trim().toLowerCase();
         String password = authentication.getCredentials().toString().trim();
 
-        Account user = userService.findAccountByUsername(username);
+        Account user = accountDAO.findAccountByUsername(username);
 
         if (user == null || !user.getUsername().equalsIgnoreCase(username)) {
 
